@@ -78,7 +78,7 @@ Identifying trends or patterns in the data over a time-period.
 
 ![Multiple Linear Regression Model](./images/multi-linear-regression.jpeg)
 
-To estimate the relationship between the various factors impacting the happiness index and the happiness index.   
+To estimate the relationship between the various factors impacting the happiness index, and the happiness index.   
 
 ### Hierarchical Clustering
 
@@ -92,7 +92,7 @@ From there, we will be able to identify various clusters.
 * **corrplot**: Visualisation of a Correlation Matrix
 * **cluster**: Cluster Analysis
 * **ExPanDar**: Explore Data Interactively
-* **ggplot**: Create Data Visualization
+* **ggplot2**: Create Data Visualization
 * **ggiraph**: Making ‘ggplot2’ Graphics Interactive
 * **ggiraphExtra**: Make Interactive 'ggplot2'. Extension to 'ggplot2' and 'ggiraph'
 * **RColorBrewer**: ColorBrewer Palettes
