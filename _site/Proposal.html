@@ -112,7 +112,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Proposal"]},{"type":"character","attributes":{},"value":["Visualising the Happiness Index throughout the World in this Covid-19 situation.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Elaine Lee, Teo Chye Teck (Lance)"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["2021-02-28"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Proposal"]},{"type":"character","attributes":{},"value":["Visualising the Happiness Index throughout the World in this Covid-19 situation.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Elaine Lee, Teo Chye Teck (Lance)"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["Singapore Management University"]},{"type":"NULL"}]}]},{"type":"character","attributes":{},"value":["2021-02-28"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2009,7 +2009,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Proposal","description":"Visualising the Happiness Index throughout the World in this Covid-19 situation.","authors":[{"author":"Elaine Lee, Teo Chye Teck (Lance)","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2021-02-28T00:00:00.000+08:00","citationText":"(Lance), 2021"}
+{"title":"Proposal","description":"Visualising the Happiness Index throughout the World in this Covid-19 situation.","authors":[{"author":"Elaine Lee, Teo Chye Teck (Lance)","authorURL":"#","affiliation":"Singapore Management University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-28T00:00:00.000+08:00","citationText":"(Lance), 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2040,7 +2040,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-byline">
-  Elaine Lee, Teo Chye Teck (Lance) <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
+  Elaine Lee, Teo Chye Teck (Lance)  (Singapore Management University)
   
 <br/>2021-02-28
 </div>
@@ -2073,10 +2073,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <figure>
 <img src="images/choropleth.jpeg" alt="" /><figcaption>Choropleth Map for Happiness Index of the World</figcaption>
 </figure>
+<p>Analysis of Spatial Data: A Choropleth Map displaying the view of where each country is placed in the World ranking report (for example: darker shade for countries that have the highest rating while the lighter shade represents countries with a lower ranking). It will also be used to visualise the ranking for all the factors impacting the happiness index for indivdual countries, as well as for the region and clusters which will be determined by the hierarchical clustering later on.</p>
 <h3 id="bubble-plot">Bubble Plot</h3>
 <figure>
 <img src="images/bubble.jpeg" alt="" /><figcaption>Bubble Plot</figcaption>
 </figure>
+<p>Multivariate graphical including Bubble Chart that displays multiple circles (bubbles) in a two-dimensional plot.</p>
 <h3 id="visualising-uncertainty">Visualising Uncertainty</h3>
 <figure>
 <img src="images/uncertainty.jpeg" alt="" /><figcaption>Visualising Uncertainty</figcaption>
@@ -2085,6 +2087,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <figure>
 <img src="images/time-series.jpeg" alt="" /><figcaption>Time-series</figcaption>
 </figure>
+<p>Identifying trends or patterns in the data over a time-period.</p>
 <h2 id="statistical-analysis">Statistical Analysis</h2>
 <figure>
 <img src="images/stat.jpeg" alt="" /><figcaption>Statistical Analysis Storyboard</figcaption>
@@ -2097,10 +2100,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <figure>
 <img src="images/multi-linear-regression.jpeg" alt="" /><figcaption>Multiple Linear Regression Model</figcaption>
 </figure>
+<p>To estimate the relationship between the various factors impacting the happiness index and the happiness index.</p>
 <h3 id="hierarchical-clustering">Hierarchical Clustering</h3>
 <figure>
 <img src="images/hie-cluster.jpeg" alt="" /><figcaption>Multiple Linear Regression Model</figcaption>
 </figure>
+<p>To understand how different countries relate to each other using the data provided, and how far apart data points are. From there, we will be able to identify various clusters.</p>
 <h1 id="proposed-r-packages">Proposed R Packages</h1>
 <ul>
 <li><strong>corrplot</strong>: Visualisation of a Correlation Matrix</li>

@@ -4,9 +4,9 @@ description: |
   Visualising the Happiness Index throughout the World in this Covid-19 situation.
 author:
   - name: Elaine Lee, Teo Chye Teck (Lance)
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+    url: 
+    affiliation: Singapore Management University
+    affiliation_url: 
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -48,9 +48,13 @@ https://www.kaggle.com/mathurinache/world-happiness-report
 
 ![Choropleth Map for Happiness Index of the World](./images/choropleth.jpeg)
 
+Analysis of Spatial Data: A Choropleth Map displaying the view of where each country is placed in the World ranking report (for example: darker shade for countries that have the highest rating while the lighter shade represents countries with a lower ranking). It will also be used to visualise the ranking for all the factors impacting the happiness index for indivdual countries, as well as for the region and clusters which will be determined by the hierarchical clustering later on.
+
 ### Bubble Plot
 
 ![Bubble Plot](./images/bubble.jpeg)
+
+Multivariate graphical including Bubble Chart that displays multiple circles (bubbles) in a two-dimensional plot.
 
 ### Visualising Uncertainty
 
@@ -59,6 +63,8 @@ https://www.kaggle.com/mathurinache/world-happiness-report
 ### Time-series Analysis
 
 ![Time-series](./images/time-series.jpeg)
+
+Identifying trends or patterns in the data over a time-period.
 
 ## Statistical Analysis
 
@@ -72,9 +78,14 @@ https://www.kaggle.com/mathurinache/world-happiness-report
 
 ![Multiple Linear Regression Model](./images/multi-linear-regression.jpeg)
 
+To estimate the relationship between the various factors impacting the happiness index and the happiness index.   
+
 ### Hierarchical Clustering
 
 ![Multiple Linear Regression Model](./images/hie-cluster.jpeg)
+
+To understand how different countries relate to each other using the data provided, and how far apart data points are.
+From there, we will be able to identify various clusters.
 
 # Proposed R Packages
 
