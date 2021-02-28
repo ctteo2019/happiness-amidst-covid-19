@@ -1,7 +1,7 @@
 ---
-title: "About this site"
+title: "A Visual Analytic Project by ISSS608 Group 1 Team 7"
 description: |
-  Some additional details about the website
+  Team Members: Elaine Lee and Lance Teo
 ---
 
 ```{r setup, include=FALSE}
