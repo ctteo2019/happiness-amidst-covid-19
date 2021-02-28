@@ -88,36 +88,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
 <title>Happiness Amidst Covid-19: Proposal</title>
 
-<meta property="description" itemprop="description" content="A short description of the post."/>
+<meta property="description" itemprop="description" content="Visualising the Happiness Index throughout the World in this Covid-19 situation."/>
 
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-02-28"/>
 <meta property="article:created" itemprop="dateCreated" content="2021-02-28"/>
-<meta name="article:author" content="Unknown"/>
+<meta name="article:author" content="Elaine Lee, Teo Chye Teck (Lance)"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="Happiness Amidst Covid-19: Proposal"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A short description of the post."/>
+<meta property="og:description" content="Visualising the Happiness Index throughout the World in this Covid-19 situation."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Happiness Amidst Covid-19"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="Happiness Amidst Covid-19: Proposal"/>
-<meta property="twitter:description" content="A short description of the post."/>
+<meta property="twitter:description" content="Visualising the Happiness Index throughout the World in this Covid-19 situation."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Proposal"]},{"type":"character","attributes":{},"value":["A short description of the post."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Unknown"]}]}]},{"type":"character","attributes":{},"value":["02-28-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Proposal"]},{"type":"character","attributes":{},"value":["Visualising the Happiness Index throughout the World in this Covid-19 situation."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Elaine Lee, Teo Chye Teck (Lance)"]}]}]},{"type":"character","attributes":{},"value":["02-28-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["images/bubble_plot.png","images/choropleth_map.png","images/corr_plot.png","proposal_files/anchor-4.2.2/anchor.min.js","proposal_files/bowser-1.9.3/bowser.min.js","proposal_files/distill-2.2.21/template.v2.js","proposal_files/jquery-1.11.3/jquery.min.js","proposal_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2013,7 +2013,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Proposal","description":"A short description of the post.","authors":[{"author":"Unknown","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-28T00:00:00.000+08:00","citationText":"Unknown, 2021"}
+{"title":"Proposal","description":"Visualising the Happiness Index throughout the World in this Covid-19 situation.","authors":[{"author":"Elaine Lee, Teo Chye Teck (Lance)","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-28T00:00:00.000+08:00","citationText":"(Lance), 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2040,18 +2040,65 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1>Proposal</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A short description of the post.</p></p>
+<p><p>Visualising the Happiness Index throughout the World in this Covid-19 situation.</p></p>
 </div>
 
 <div class="d-byline">
-  Unknown  
+  Elaine Lee, Teo Chye Teck (Lance)  
   
 <br/>02-28-2021
 </div>
 
 <div class="d-article">
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
+<h1 id="introduction">Introduction</h1>
+<p>As the global Covid-19 pandemic hits, the theme of the World Happiness Report 2020 is “Environments for Happiness,” with focus on social environment, happiness in cities and rural areas, and the natural environment, including links between happiness and sustainable development. The World Happiness Report 2020 surveys 156 countries around the world, ranking countries by their happiness levels. Countries are ranked on six key variables that support well-being: GDP per capita, social support, healthy life expectancy, freedom to make life choices, generosity, and freedom from corruption.</p>
+<p>The happiness scores and rankings use data from the Gallup World Poll. The scores are based on answers to the main life evaluation question asked in the poll which is: “Please imagine a ladder, with steps numbered from 0 at the bottom to 10 at the top. The top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time?” (Also known as the “Cantril Ladder”.)</p>
+<p>This project aims to analyse and identify patterns regarding the Happiness Score comparing pre-and post Covid-19 pandemic. We intend to draw conclusions from the data and generate visualization of the data for the respective countries or regions especially in Singapore.</p>
+<h1 id="motivation-and-objectives">Motivation and Objectives</h1>
+<p>We have chosen to explore a dataset describing the Happiness Score based on the World Happiness Report 2020. The data set contains information of 156 countries based on an average of three years of surveys between 2017 and 2019 along with the factors used to explain the score.</p>
+<p>Our project aims to answer the following questions:</p>
+<ol type="1">
+<li>Which country or region rank the highest/lowest in overall Happiness during Covid-19 pandemic?<br />
+</li>
+<li>How did country rank or score changes during pre and post Covid-19 pandemic?<br />
+</li>
+<li>What are the countries that experience a significant increase or decrease in Happiness during Covid-19 pandemic?<br />
+</li>
+<li>What is the main factor that impacts the Happiness Score more significantly during Covid-19 pandemic?</li>
+</ol>
+<h1 id="methodology-and-approach">Methodology and Approach</h1>
+<h2 id="data-source">Data Source</h2>
+<p><a href="https://www.kaggle.com/mathurinache/world-happiness-report" class="uri">https://www.kaggle.com/mathurinache/world-happiness-report</a></p>
+<h2 id="exploratory-data-analysis">Exploratory Data Analysis</h2>
+<h3 id="choropleth-map">Choropleth Map</h3>
+<h3 id="bubble-plot">Bubble Plot</h3>
+<h3 id="visualising-uncertainty">Visualising Uncertainty</h3>
+<h3 id="time-series-analysis">Time-series Analysis</h3>
+<h2 id="statistical-analysis">Statistical Analysis</h2>
+<h3 id="correlation-analysis">Correlation Analysis</h3>
+<h3 id="multi-linear-regression-model">Multi Linear Regression Model</h3>
+<h3 id="hierarchical-clustering">Hierarchical Clustering</h3>
+<h1 id="proposed-r-packages">Proposed R Packages</h1>
+<ul>
+<li><strong>corrplot</strong>: Visualisation of a Correlation Matrix</li>
+<li><strong>cluster</strong>: Cluster Analysis</li>
+<li><strong>ExPanDar</strong>: Explore Data Interactively</li>
+<li><strong>ggplot</strong>: Create Data Visualization</li>
+<li><strong>ggiraph</strong>: Making ‘ggplot2’ Graphics Interactive</li>
+<li><strong>ggiraphExtra</strong>: Make Interactive ‘ggplot2’. Extension to ‘ggplot2’ and ‘ggiraph’</li>
+<li><strong>RColorBrewer</strong>: ColorBrewer Palettes</li>
+<li><strong>plm</strong>: Linear Models for Panel Data</li>
+<li><strong>shiny</strong>: Web Application Framework for R</li>
+<li><strong>tidyverse</strong>: Install and Load the ‘Tidyverse’</li>
+<li><strong>tmap</strong>: Thematic Maps</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://worldhappiness.report/">World Happiness Report</a></li>
+<li><a href="https://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/General/index">Eurobarometer</a></li>
+<li><a href="https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp">World Value Survey</a></li>
+<li><a href="https://www.ipsos.com/en/global-happiness-study-2020">The State of Happiness in a Covid World</a></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
