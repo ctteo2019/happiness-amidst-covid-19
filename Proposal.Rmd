@@ -1,0 +1,106 @@
+---
+title: "Proposal"
+description: |
+  Visualising the Happiness Index throughout the World in this Covid-19 situation.
+author:
+  - name: Elaine Lee, Teo Chye Teck (Lance)
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+
+As the global Covid-19 pandemic hits, the theme of the World Happiness Report 2020 is “Environments for Happiness,” with focus on social environment, happiness in cities and rural areas, and the natural environment, including links between happiness and sustainable development.
+The World Happiness Report 2020 surveys 156 countries around the world, ranking countries by their happiness levels. Countries are ranked on six key variables that support well-being: GDP per capita, social support, healthy life expectancy, freedom to make life choices, generosity, and freedom from corruption.    
+  
+The happiness scores and rankings use data from the Gallup World Poll. The scores are based on answers to the main life evaluation question asked in the poll which is: “Please imagine a ladder, with steps numbered from 0 at the bottom to 10 at the top. The top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time?” (Also known as the “Cantril Ladder”.)        
+
+This project aims to analyse and identify patterns regarding the Happiness Score comparing pre-and post Covid-19 pandemic.  We intend to draw conclusions from the data and generate visualization of the data for the respective countries or regions especially in Singapore.
+
+# Motivation and Objectives
+
+We have chosen to explore a dataset describing the Happiness Score based on the World Happiness Report 2020. The data set contains information of 156 countries based on an average of three years of surveys between 2017 and 2019 along with the factors used to explain the score.
+
+Our project aims to answer the following questions:    
+
+1. Which country or region rank the highest/lowest in overall Happiness during Covid-19 pandemic?   
+2. How did country rank or score changes during pre and post Covid-19 pandemic?   
+3. What are the countries that experience a significant increase or decrease in Happiness during Covid-19 pandemic?   
+4. What is the main factor that impacts the Happiness Score more significantly during Covid-19 pandemic?    
+
+# Methodology and Approach
+
+## Data Source
+https://www.kaggle.com/mathurinache/world-happiness-report
+
+## Exploratory Data Analysis
+
+![EDA Storyboard](./images/eda.jpeg)
+
+### Choropleth Map
+
+![Choropleth Map for Happiness Index of the World](./images/choropleth.jpeg)
+
+### Bubble Plot
+
+![Bubble Plot](./images/bubble.jpeg)
+
+### Visualising Uncertainty
+
+![Visualising Uncertainty](./images/uncertainty.jpeg)
+
+### Time-series Analysis
+
+![Time-series](./images/time-series.jpeg)
+
+## Statistical Analysis
+
+![Statistical Analysis Storyboard](./images/stat.jpeg)
+
+### Correlation Analysis
+
+![Correlation of various factors](./images/corr.jpeg)
+
+### Multi Linear Regression Model
+
+![Multiple Linear Regression Model](./images/multi-linear-regression.jpeg)
+
+### Hierarchical Clustering
+
+![Multiple Linear Regression Model](./images/hie-cluster.jpeg)
+
+# Proposed R Packages
+
+* **corrplot**: Visualisation of a Correlation Matrix
+* **cluster**: Cluster Analysis
+* **ExPanDar**: Explore Data Interactively
+* **ggplot**: Create Data Visualization
+* **ggiraph**: Making ‘ggplot2’ Graphics Interactive
+* **ggiraphExtra**: Make Interactive 'ggplot2'. Extension to 'ggplot2' and 'ggiraph'
+* **RColorBrewer**: ColorBrewer Palettes
+* **plm**: Linear Models for Panel Data
+* **shiny**: Web Application Framework for R
+* **tidyverse**: Install and Load the ‘Tidyverse’
+* **tmap**: Thematic Maps
+
+
+# References
+
+* [World Happiness Report](https://worldhappiness.report/)
+* [Eurobarometer](https://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/General/index)
+* [World Value Survey](https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp)
+* [The State of Happiness in a Covid World](https://www.ipsos.com/en/global-happiness-study-2020)
+
+
+
+
+
+
+
