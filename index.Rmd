@@ -1,5 +1,5 @@
 ---
-title: "Happiness Amidst Covid-19"
+title: "Innovation Amidst Covid-19"
 description: |
   A Visual Analytics Project for ISSS608
 site: distill::distill_website
@@ -13,10 +13,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-![Source: Harvard Kennedy School](./images/happiness-covid.jpg)
 
-Covid-19’s impacts on workers and workplaces across the globe has been dramatic. Due to the uncertainty and isolation of lockdowns, people have begun to recalibrate what is important to them and what it means to be happy as their understanding of happiness changed. 
-In this project, we analyse and identify patterns regarding the Happiness Score comparing pre-and post Covid-19 pandemic in different countries based on the World Happiness Report 2020 and specifically to better understand the impact in Singapore.
+
+Covid-19’s impacts on workers and workplaces across the globe has been dramatic. Indeed, there will be global business realignment triggered by the global Covid-19 pandemic disruptions.
+In this project, we analyse and identify patterns regarding the Global Innovation Score comparing pre-and post Covid-19 pandemic in different countries based on the Global Innovation Index 2020 and specifically to better understand the impact in Singapore.
 
 Our approach includes developing a R-Shiny application for an interactive:
 

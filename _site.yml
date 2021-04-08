@@ -1,7 +1,7 @@
-name: "happiness-amidst-covid-19"
-title: "Happiness Amidst Covid-19"
+name: "innovation-amidst-covid-19"
+title: "Innovation Amidst Covid-19"
 description: |
-  Happiness Amidst Covid-19
+  Innovation Amidst Covid-19
 output_dir: "_site"
 navbar:
   right:
