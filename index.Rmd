@@ -1,7 +1,5 @@
 ---
 title: "Innovation Amidst Covid-19"
-description: |
-  A Visual Analytics Project for ISSS608
 site: distill::distill_website
 listing: posts
 ---
