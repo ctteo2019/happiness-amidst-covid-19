@@ -1,65 +1,227 @@
 ---
-title: Short Paper
+title: Innovation Amidst Covid-19 - Web-based Visualization in R using Shiny
 author:
-  - name: Alice Anonymous
-    email: alice@example.com
-    affiliation: Some Institute of Technology
-  - name: Bob Security
-    email: bob@example.com
-    affiliation: Another University
+  - name: Lance Teo Chye Teck
+    email: ctteo.2019@mitb.smu.edu.sg
+    affiliation: Singapore Management of University
+  - name: Elaine Lee
+    email: elaine.lee.2018@mitb.smu.edu.sg
+    affiliation: Singapore Management of University
 abstract: |
-  This is the abstract.
+  Since the start of Covid-19 outbreak, the Global Innovation Index (GII) 2020 has drawn international attention as     current crisis has impacted innovation financing. In the 2020 report, the theme is “Who Will Finance Innovation?”.    According to the 2020 GII rankings, Switzerland tops the ranking, followed by Sweden, United States, United Kingdom 
+  and Netherlands. The Republic of Korea joins the top 10 for the first time and follows Singapore (8th).
 
-  It consists of two paragraphs.
+  This study aims to analyse and identify patterns regarding the Global Innovation Score comparing pre-and-post         Covid-19 pandemic in different countries, and the focus in this research will be Singapore. In this works, we will    be using the dataset Global Innovation Index 2020. The results, we describe and discuss the dataset using             Exploratory data analysis and Statistical analysis. Output of analysis will be displayed in the R Shiny application.
+  
+  Keywords: Covid-19, Global Innovation Index, Exploratory Data Analysis, Data Science, Visualization, R Shiny
+
 bibliography: sigproc.bib
 csl: acm-sig-proceedings.csl
 output: rticles::acm_article
 ---
 
-
-
 # Introduction 
-Lorem ipsum dolor sit[@meier2012] amet, consectetur adipiscing[@fenner2012a] elit. Pellentesque rhoncus ut tellus eu tristique. Duis pharetra velit vitae viverra elementum. Nulla metus dui, pulvinar id enim at, pellentesque semper ipsum. Phasellus cursus dignissim ipsum, sed congue orci pretium quis. Maecenas rhoncus leo a cursus euismod. Fusce a erat eu ipsum tristique tempus at sed tortor. Aliquam erat volutpat. Donec at pretium lorem. Donec pretium nunc id nunc bibendum convallis. Phasellus quis enim id massa feugiat egestas hendrerit sollicitudin nibh. Sed blandit eros id tellus porta, eget ullamcorper urna posuere. Pellentesque laoreet lacus nibh, a mattis libero viverra sit amet. Sed vitae diam interdum, pharetra neque sit amet, dictum lectus.
+An innovation is a new or improved product or process (or combination thereof) that differs significantly from the unit’s previous products or processes and that has been made available to potential users (product) or brought into use by the unit (process)[@1]. Innovation Index is an appropriate measurement to gauge innovation capabilities. Innovation, being the most known ranking for measuring innovation performance is used as a leading reference in several international reports, for instance, the World Economic Forum’s Global Competitiveness Report which looks at economies’ innovation capability and ultimately, the Global Innovation Index which is co-published by the World Intellectual Property Organization, Cornell University and INSEAD. 
 
-Donec massa justo, ultricies quis facilisis sed, tristique nec metus. Vestibulum id condimentum diam. Integer semper augue id porttitor ultrices. Cras vulputate felis eu diam porttitor, ac pulvinar nisi imperdiet. Donec eros felis, imperdiet vel malesuada at, varius et quam. Phasellus facilisis non risus eu placerat. Sed ac mollis lorem.
+The aim of the GII is to provide insightful data on innovation and, in turn, to assist economies in evaluating their innovation performance and making informed innovation policy considerations. The GII relies on two sub-indices namely the Innovation Input Sub-Index (five pillars and captures the elements of the national economy that enable innovative activities) and the Innovation Output Sub-Index (two pillars and captures the result of innovation activities in an economy). The overall GII score is given by calculating the average of these input and output sub-indices.
 
-# Evaluation
-Nullam semper imperdiet orci, at lacinia est aliquet et. Sed justo nibh, aliquet et velit at, pharetra consequat velit. Nullam nec ligula sagittis, adipiscing nisl sed, varius massa. Mauris quam ante, aliquet a nunc et, faucibus imperdiet libero. Suspendisse odio tortor, bibendum vel semper sit amet, euismod ac ante. Nunc nec dignissim turpis, ac blandit massa. Donec auctor massa ac vestibulum aliquam. Fusce auctor dictum lobortis. Vivamus tortor augue, convallis quis augue sit amet, laoreet tristique quam. Donec id volutpat orci. Suspendisse at mi vel elit accumsan porta ac ut diam. Nulla ut dapibus quam.
+Framework of the GII 2020 as follows [@2]:
 
-Sed est odio, ornare in rutrum et, dapibus in urna. Suspendisse varius massa in ipsum placerat, quis tristique magna consequat. Suspendisse non convallis augue. Quisque fermentum justo et lorem volutpat euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sagittis interdum justo, eu consequat nisi convallis in. Sed tincidunt risus id lacinia ultrices. Phasellus ac ligula sed mi mattis lacinia ac non felis. Etiam at dui tellus.
+![](./images/Overview.png)
 
-# Conclusion
-Duis nec purus sed neque porttitor tincidunt vitae quis augue. Donec porttitor aliquam ante, nec convallis nisl ornare eu. Morbi ut purus et justo commodo dignissim et nec nisl. Donec imperdiet tellus dolor, vel dignissim risus venenatis eu. Aliquam tempor imperdiet massa, nec fermentum tellus sollicitudin vulputate. Integer posuere porttitor pharetra. Praesent vehicula elementum diam a suscipit. Morbi viverra velit eget placerat pellentesque. Nunc congue augue non nisi ultrices tempor.
+This paper is structured as follows. Firstly, there will be an overview of the motivation of this research, followed by Review and Critic on Past Works in Section 3. Next, Section 4 presents an overview of the methodology. Following, the data set that was used in this research as well as the procedure of data manipulation is described in Section 5. A concise overview of the design framework is described in Section 6.  The interpretation of the analytics technique is presented in Section 7. Our results are visualized using R Shiny application in Section 8 and 9. Finally, future research direction are presented in the last section.
+
+# Motivation
+
+The purpose of this paper is to analyse and identify patterns regarding the GII during Covid-19 pandemic. We intend to draw conclusions from the data and generate visualization of the data for the respective countries or regions especially in Singapore. Specifically, it will aim to answer the following questions:
+i) Which country or region rank the highest or lowest during the pandemic?
+ii)	How did country rank or score changes during pre and post pandemic?
+iii) What is the main factor that impacts the GII Score more significantly during the pandemic?
+
+
+
+# Review and Critic of Past Works
+
+Based on the GII 2020 report, there are limitations in the exploration of relationship between the input and output sub-index. Current data visualization in the report only includes the relationship between innovation and development as shown below. For the purpose of our paper, we will look at the relationship between Institution, Human Capital and Research, Infrastructure, Market Sophistication, Business Sophistication, Knowledge and Technology outputs and Creative outputs.
+
+![](./images/Critic.PNG)
+
+# Methodology
+The main parts of quantitative analysis will include Exploratory Data Analysis, Clustering, Statistical Plot and  Correlation.
+
+Exploratory Data Analysis refers to the necessary process of performing initial investigations on the dataset to discover patterns and to gain more insights into the dataset and as part of pre-processing for further analysis.
+
+Clustering is described as the unsupervised classification of patterns into groups, called clusters. One of the approaches is called Hierarchical clustering. 
+
+Statistical Plot allows the visualization of the actual data in combination with a selection of summaries such as box plot or violin plot.
+
+Lastly, it is important to look into correlations between chosen variables. The chart will show correlation coefficients between the GII score, innovation inputs and outputs.
+
+# Data
+The data was obtained from the official website of Global Innovation Index, representing for the year 2020 [@2]. The data was collected for 131 countries, representing 93.5% of the world’s population and 97.4% of the world’s GDP in purchasing power parity current international dollars.
+
+## Exploratory Data Analysis
+The dataset was checked to ensure all variables have consistent naming convention. After removing the inconsistency, only dataset for year 2015 to 2020 was used.
+Next, Data Wrangling involving extracting the score component of the dataset for each year, removing unwanted brackets from the score and pivoting the dataset to a longer dataset was done.
+In order to achieve consistent country naming convention through the years, standardising country names using countrycode [@3] function in R packages is used.
+Lastly, the naming convention of some indicators also differs from year to year. In order to achieve consistent indicators naming convention, the naming is aligned based on year 2020 according to the section number of each indicator.
+Final dataset consists of 117 variables and 975 observations for year 2015 to 2020.
+
+# Design Framework
+The Shiny webpage will demonstrate the various features in a Shiny application, including interactive graphics and visualization. Our dashboard called **“INNOVAC” (INNOVation Amidst Covid)** has three separate modules namely Home, Exploratory Data Analysis and Statistical Analysis.
+
+**Home** : Provides a board overview of the project and details of project team.
+**Exploratory Data Analysis** : Provides users with 4 different exploratory techniques such as Choropleth Map, Radar, Chart, Slope Graph, and Bubble Plot (animated through years).
+**Statistical Analysis** : Provides users with 3 different statistical techniques namely Correlation Analysis,       Statistical Plots (Violin, Box, and Scatter Plot), and Hierarchical Clustering (via a Heatmap).
+
+# Analysis Technique  
+  
+  
+## Choropleth Map
+Choropleth Map is a thematic map in which areas are shaded in proportion to the GII score.  In the case of GII score, 6 bins were created, and sequential colour scheme (from light to dark blue) is used. Darker blue colour represents higher GII scores. 
+
+## Radar Chart
+Radar Chart displays multivariate data in a 2-dimensional chart where each variable starts at the same point.  In order to distinguish each observation from each other, only 10 countries (Top 10 rankings of the GII) were selected for further analysis.
+
+## Slope Graph
+In order to show the changes of GII score for all countries for year 2015 to 2020, Slope Graph is used. The chart will imply if there is a growing or declining trend across time period.
+
+## Bubble Plot
+It is important to visualize how input or output sub-index relate to one another. The use of Bubble Plot is an effective way to show the relationship between two variables. The advantage of a Bubble Plot allows the visualization of a third variable which is the size of the circle to reflect the GII score.
+
+## Correlation Analysis
+In our paper, we consider seven metric variables (Input and Output sub-indexes including Institution, Human Capital and Research, Infrastructure, Market Sophistication, Business Sophistication, Knowledge and Technology outputs and Creative outputs). Most of the correlation coefficient values appear positive. It provides users a measurement of the strength of association between the selected set of indicators.
+
+## Statistical Plots
+The statistical plots provide users with relevant statistical details via a combination of a scatter plot, box plot, and a violin plot.The plot is also publication-ready courtesy of the **ggstatsplot library**.
+
+## Hierarchical Clustering
+For visualizing multivariate data, heatmap [@4] is plotted with corresponding relationship and is also able to cluster similar countries and indicators together based on their relationships.
+
+# Demonstration using Shiny
+For a step-by-step guide on how to use the application, please refer to the Application User Guide:https://innovation-amidst-covid-19.netlify.app/posts/2021-04-25-application-user-guide/. 
+
+The aim is to implement an interactive, user-friendly and scalable web-based application for analysing and visualization the data of Global Innovation Index 2020 with R and Shiny.
+
+It can be seen from **Choropleth Map**, the GII scores varies for different countries. The map was rendered using the **tmap** package in R allowing to have more interactivity features in the dashboard like zooming, hovering over the country and GII score pops out respectively. By selecting particular indicator and year, user will be able to see the distribution of the GII scores in the geospatial view for all the countries. From the visualization, it becomes clear that countries like The United States have a higher GII score than Sub-Saharan Africa.
+
+![](./images/Picture1.PNG)
+
+For **Radar Chart**, **ggplot2** helps render the chart into Shiny application.  By making use of Radar chart, it provides the breakdown of GII score based on seven indicators. In order to avoid too many overlays on a chart which may cause the chart to be complicated, our paper focuses on selected 10 countries as shown. In terms of interactivity, user is able to select from the side panel the Year of the data, the set of Indicators to compare, and the different Countries to compare among each other. 
+
+![](./images/Picture11.PNG)
+
+For **Slope Graph**, the **newggslopegraph** package was exploited as it provides customizable slope graphs in terms of aesthetics and ease of usage. It allows the comparison of GII score for all countries across time periods (year 2015 to 2020). Different colours are used to show the trend of GII score for respective countries. From the visualization, there is a growing trend in GII score for China from year 2015 to 2019.
+In terms of interactivity, user is able to select a range of Year, the Indicator to trend, and the set of Countries to compare among each other via the side panel.
+
+![](./images/Picture3.PNG)
+
+The **Bubble Plot** below is an effective way to show the relationship between two variables. The bubbles are sized by GII score and interactive plot is rendered using **gganimate** [@5] Package in R. From the visualization, the relationship between Ease of starting business and Gross expenditure on R&D is shown. Compared to other regions in Europe, Switzerland have the highest GII score. In terms of interactivity, user is able to select an indicator for all three different parameters: X-Axis, Y-Axis and Size of bubble as well as selecting the set of countries for comparison.
+
+![](./images/Picture2.PNG)
+
+**Correlation** provides insights into the relationship between two variables. In this paper, we consider seven metric variables as shown. Correlation coefficient values ranges from -1 to +1 with 0 interpreted perfectly unrelated, -1 perfectly negatively related and +1 perfectly positively related.  Also, we measure three types of correlations namely Pearson correlation, Kendall rank correlation and Spearman correlation [@6].
+
+Pearson r correlation: Pearson r correlation is widely used in statistics to measure the degree of the relationship between linear related variables. 
+Kendall rank correlation: Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.
+Spearman rank correlation: Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.
+
+From the visualization, there is a high correlation between GII score and Knowledge and technology outputs.  The **corrplot** package was used to create the correlation plot.  In terms of interactivity, user is able to select the Year, the set of Indicators to correlate, filter the Countries, change the Correlation Method, change the Plot Method and Reorder the Correlation.
+
+![](./images/Picture5.PNG)
+
+For **Statistical Plot**, a combination of box and violin plots with statistical details are included in the plot.
+In terms of interactivity, user is able to select the different Years and the Indicator to compare among the different countries. 
+
+![](./images/Picture17.PNG)
+
+For **Clustering**, **Heatmaply** package offers user friendly interactive cluster heatmap with tooltip display of values when hovering over cells. The user can calibrate the clustered heat maps by selecting year, number of clusters, indicators, linkage method (such as single linkage, complete linkage and average linkage) to visualize how different indicators contribute to GII score across different countries.  The various distance measures used are Euclidean, Maximum, Manhattan, Canberra, Binary and Minkowski.
+
+![](./images/Picture4.PNG)
+
+# Results and Conclusion
+
+From the above analysis, we can draw the following conclusion for the following key questions:
+i)	Which country or region rank the highest or lowest during Covid-19 pandemic?
+ii)	How did country rank or score changes during pre and post Covid-19 pandemic?
+
+![](./images/Picture19.PNG)
+![](./images/Picture21.PNG)
+
+Based on the figures above, Switzerland ranks first among the other countries in 2020. Definitely, innovation financing declines in the current Covid-19 pandemic. It can be observed that higher innovation was observed when such countries had a less severe government response as opposed to lower innovation that was associated with countries with increased stringency.
+
+Most countries experienced a decline in GII during the Covid-19 period in year 2020.
+
+iii) What is the main factor that impacts the Global Innovation Score more significantly during Covid-19 pandemic?
+
+![](./images/Picture23.PNG)
+The main factor as evident from the Correlation analysis is Knowledge and technology outputs. The Covid-19 pandemic has led to new international research collaborations especially in the area of healthcare.
+
+# Future Works
+Future research suggestions can be summarised as the following aspects:
+i)	Finding suitable metrics that capture innovation for developing countries like Africa [@7] as innovation process is difficult partly due to uncertain domestic competencies.
+ii)	Analysis from the Global Innovation Index can be done at a regional level instead of a specific country so as to achieve a comprehensive overview on the economy.
+
+# Acknowledgements
+We would like to show our gratitude to Professor Kam Tin Seong who provided insights and expertise that greatly assisted the project.
 
 # References
 
 ---
 references:
-- id: meier2012
-  title: Professinal Android 4 Application Development
+- id: 1
+  title: Oslo Manual
   author: 
-  - family: Meier
-    given: Reto
-  type: book
-  publisher: John Wiley & Sons, Inc.
+  - family: Organisation for Economic Cooperation and Development ilibrary
+  type: article-journal
+  publisher: Organisation for Economic Cooperation and Development (OECD)
   issued:
-    year: 2012
-    month: 5
-- id: fenner2012a
-  title: One-click science marketing
-  author:
-  - family: Fenner
-    given: Martin
-  container-title: Nature Materials
-  volume: 11
-  URL: 'https://doi.org/10.1038/nmat3283'
-  DOI: 10.1038/nmat3283
-  issue: 4
-  publisher: Nature Publishing Group
-  page: 261-263
+    year: 2021
+- id: 2
+  title: Global Innovation Index 2020
+  author: 
+  - family: Cornell INSEAD WIPO
+  type: article-journal
+  publisher: Cornell INSEAD WIPO
+  issued:
+    year: 2020
+- id: 3
+  title: Convert Country Names and Country Codes
+  author: 
+  - family: Vincent Arel-Bundock, CJ Yetman and Nils Enevoldsen
   type: article-journal
   issued:
-    year: 2012
-    month: 3
+    year: 2020
+- id: 4
+  title: Global Innovation Index 2020
+  author: 
+  - family: Cornell INSEAD WIPO
+  type: article-journal
+  publisher: Cornell INSEAD WIPO
+  issued:
+    year: 2020
+- id: 5
+  title: C
+  author: 
+  - family: Organisation for Economic Cooperation and Development ilibrary
+  type: article-journal
+  publisher: Organisation for Economic Cooperation and Development (OECD)
+  issued:
+    year: 2021
+- id: 6
+  title: Global Innovation Index 2020
+  author: 
+  - family: Cornell INSEAD WIPO
+  type: article-journal
+  publisher: Cornell INSEAD WIPO
+  issued:
+    year: 2020
+- id: 7
+  title: Global Innovation Index 2020
+  author: 
+  - family: Cornell INSEAD WIPO
+  type: article-journal
+  publisher: Cornell INSEAD WIPO
+  issued:
+    year: 2020
 ...
-
