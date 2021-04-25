@@ -12,8 +12,8 @@
       "path": "index.html",
       "title": "Innovation Amidst Covid-19",
       "author": [],
-      "contents": "\r\nCovid-19’s impacts on workers and workplaces across the globe has been dramatic. Indeed, there will be global business realignment triggered by the global Covid-19 pandemic disruptions. In this project, we analyse and identify patterns regarding the Global Innovation Score comparing pre-and post Covid-19 pandemic in different countries based on the Global Innovation Index 2020 and specifically to better understand the impact in Singapore.\r\nOur approach includes developing a R-Shiny application for an interactive:\r\nExploratory Data Analysis which includes a Choropleth Map, Bubble Plot, Visualising Uncertainty, and Time-series Analysis, and\r\nStatistical Analysis which includes Correlation Analysis, Multiple Linear Regression Model, and Hierarchical Clustering.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-25T13:59:32+08:00"
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-25T14:12:05+08:00"
     },
     {
       "path": "Proposal.html",

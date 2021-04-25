@@ -1,6 +1,7 @@
 ---
 title: "Innovation Amidst Covid-19"
 site: distill::distill_website
+listing: posts
 ---
 
 ```{r setup, include=FALSE}
@@ -13,13 +14,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-Covid-19’s impacts on workers and workplaces across the globe has been dramatic. Indeed, there will be global business realignment triggered by the global Covid-19 pandemic disruptions.
-In this project, we analyse and identify patterns regarding the Global Innovation Score comparing pre-and post Covid-19 pandemic in different countries based on the Global Innovation Index 2020 and specifically to better understand the impact in Singapore.
+<!-- Covid-19’s impacts on workers and workplaces across the globe has been dramatic. Indeed, there will be global business realignment triggered by the global Covid-19 pandemic disruptions. -->
+<!-- In this project, we analyse and identify patterns regarding the Global Innovation Score comparing pre-and post Covid-19 pandemic in different countries based on the Global Innovation Index 2020 and specifically to better understand the impact in Singapore. -->
 
-Our approach includes developing a R-Shiny application for an interactive:
+<!-- Our approach includes developing a R-Shiny application for an interactive: -->
 
-(1) Exploratory Data Analysis which includes a **Choropleth Map**, **Bubble Plot**, **Visualising Uncertainty**, and **Time-series Analysis**, and 
-(2) Statistical Analysis which includes **Correlation Analysis**, **Multiple Linear Regression Model**, and **Hierarchical Clustering**.
+<!-- (1) Exploratory Data Analysis which includes a **Choropleth Map**, **Bubble Plot**, **Visualising Uncertainty**, and **Time-series Analysis**, and  -->
+<!-- (2) Statistical Analysis which includes **Correlation Analysis**, **Multiple Linear Regression Model**, and **Hierarchical Clustering**. -->
 
 
 
