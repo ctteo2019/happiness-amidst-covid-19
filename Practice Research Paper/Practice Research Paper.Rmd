@@ -21,11 +21,11 @@ output: rticles::acm_article
 ---
 
 # Introduction 
-An innovation is a new or improved product or process (or combination thereof) that differs significantly from the unit’s previous products or processes and that has been made available to potential users (product) or brought into use by the unit (process)[@1]. Innovation Index is an appropriate measurement to gauge innovation capabilities. Innovation, being the most known ranking for measuring innovation performance is used as a leading reference in several international reports, for instance, the World Economic Forum’s Global Competitiveness Report which looks at economies’ innovation capability and ultimately, the Global Innovation Index which is co-published by the World Intellectual Property Organization, Cornell University and INSEAD. 
+An innovation is a new or improved product or process (or combination thereof) that differs significantly from the unit’s previous products or processes and that has been made available to potential users (product) or brought into use by the unit (process)[@olso2021]. Innovation Index is an appropriate measurement to gauge innovation capabilities. Innovation, being the most known ranking for measuring innovation performance is used as a leading reference in several international reports, for instance, the World Economic Forum’s Global Competitiveness Report which looks at economies’ innovation capability and ultimately, the Global Innovation Index which is co-published by the World Intellectual Property Organization, Cornell University and INSEAD. 
 
 The aim of the GII is to provide insightful data on innovation and, in turn, to assist economies in evaluating their innovation performance and making informed innovation policy considerations. The GII relies on two sub-indices namely the Innovation Input Sub-Index (five pillars and captures the elements of the national economy that enable innovative activities) and the Innovation Output Sub-Index (two pillars and captures the result of innovation activities in an economy). The overall GII score is given by calculating the average of these input and output sub-indices.
 
-Framework of the GII 2020 as follows [@2]:
+Framework of the GII 2020 as follows [@cornell2020]:
 
 ![](./images/Overview.png)
 
@@ -33,12 +33,10 @@ This paper is structured as follows. Firstly, there will be an overview of the m
 
 # Motivation
 
-The purpose of this paper is to analyse and identify patterns regarding the GII during Covid-19 pandemic. We intend to draw conclusions from the data and generate visualization of the data for the respective countries or regions especially in Singapore. Specifically, it will aim to answer the following questions:
+The purpose of this paper is to analyse and identify patterns regarding the GII during Covid-19 pandemic. We intend to draw conclusions from the data and generate visualization of the data for the respective countries or regions. Specifically, it will aim to answer the following questions:
 i) Which country or region rank the highest or lowest during the pandemic?
 ii)	How did country rank or score changes during pre and post pandemic?
 iii) What is the main factor that impacts the GII Score more significantly during the pandemic?
-
-
 
 # Review and Critic of Past Works
 
@@ -58,17 +56,17 @@ Statistical Plot allows the visualization of the actual data in combination with
 Lastly, it is important to look into correlations between chosen variables. The chart will show correlation coefficients between the GII score, innovation inputs and outputs.
 
 # Data
-The data was obtained from the official website of Global Innovation Index, representing for the year 2020 [@2]. The data was collected for 131 countries, representing 93.5% of the world’s population and 97.4% of the world’s GDP in purchasing power parity current international dollars.
+The data was obtained from the official website of Global Innovation Index, representing for the year 2020. The data was collected for 131 countries, representing 93.5% of the world’s population and 97.4% of the world’s GDP in purchasing power parity current international dollars.
 
 ## Exploratory Data Analysis
 The dataset was checked to ensure all variables have consistent naming convention. After removing the inconsistency, only dataset for year 2015 to 2020 was used.
 Next, Data Wrangling involving extracting the score component of the dataset for each year, removing unwanted brackets from the score and pivoting the dataset to a longer dataset was done.
-In order to achieve consistent country naming convention through the years, standardising country names using countrycode [@3] function in R packages is used.
+In order to achieve consistent country naming convention through the years, standardising country names using countrycode [@vincent2020] function in R packages is used.
 Lastly, the naming convention of some indicators also differs from year to year. In order to achieve consistent indicators naming convention, the naming is aligned based on year 2020 according to the section number of each indicator.
 Final dataset consists of 117 variables and 975 observations for year 2015 to 2020.
 
 # Design Framework
-The Shiny webpage will demonstrate the various features in a Shiny application, including interactive graphics and visualization. Our dashboard called **“INNOVAC” (INNOVation Amidst Covid)** has three separate modules namely Home, Exploratory Data Analysis and Statistical Analysis.
+The Shiny webpage will demonstrate the various features in a Shiny application, including interactive graphics and visualization. Our dashboard called **“INNOVAC” (INNOVation Amidst Covid-19)** has three separate modules namely Home, Exploratory Data Analysis and Statistical Analysis.
 
 **Home** : Provides a board overview of the project and details of project team.
 **Exploratory Data Analysis** : Provides users with 4 different exploratory techniques such as Choropleth Map, Radar, Chart, Slope Graph, and Bubble Plot (animated through years).
@@ -96,7 +94,7 @@ In our paper, we consider seven metric variables (Input and Output sub-indexes i
 The statistical plots provide users with relevant statistical details via a combination of a scatter plot, box plot, and a violin plot.The plot is also publication-ready courtesy of the **ggstatsplot library**.
 
 ## Hierarchical Clustering
-For visualizing multivariate data, heatmap [@4] is plotted with corresponding relationship and is also able to cluster similar countries and indicators together based on their relationships.
+For visualizing multivariate data, heatmap [@tskam2019] is plotted with corresponding relationship and is also able to cluster similar countries and indicators together based on their relationships.
 
 # Demonstration using Shiny
 For a step-by-step guide on how to use the application, please refer to the Application User Guide:https://innovation-amidst-covid-19.netlify.app/posts/2021-04-25-application-user-guide/. 
@@ -116,11 +114,11 @@ In terms of interactivity, user is able to select a range of Year, the Indicator
 
 ![](./images/Picture3.PNG)
 
-The **Bubble Plot** below is an effective way to show the relationship between two variables. The bubbles are sized by GII score and interactive plot is rendered using **gganimate** [@5] Package in R. From the visualization, the relationship between Ease of starting business and Gross expenditure on R&D is shown. Compared to other regions in Europe, Switzerland have the highest GII score. In terms of interactivity, user is able to select an indicator for all three different parameters: X-Axis, Y-Axis and Size of bubble as well as selecting the set of countries for comparison.
+The **Bubble Plot** below is an effective way to show the relationship between two variables. The bubbles are sized by GII score and interactive plot is rendered using **gganimate** [@gganimate2018] Package in R. From the visualization, the relationship between Ease of starting business and Gross expenditure on R&D is shown. Compared to other regions in Europe, Switzerland have the highest GII score. In terms of interactivity, user is able to select an indicator for all three different parameters: X-Axis, Y-Axis and Size of bubble as well as selecting the set of countries for comparison.
 
 ![](./images/Picture2.PNG)
 
-**Correlation** provides insights into the relationship between two variables. In this paper, we consider seven metric variables as shown. Correlation coefficient values ranges from -1 to +1 with 0 interpreted perfectly unrelated, -1 perfectly negatively related and +1 perfectly positively related.  Also, we measure three types of correlations namely Pearson correlation, Kendall rank correlation and Spearman correlation [@6].
+**Correlation** provides insights into the relationship between two variables. In this paper, we consider seven metric variables as shown. Correlation coefficient values ranges from -1 to +1 with 0 interpreted perfectly unrelated, -1 perfectly negatively related and +1 perfectly positively related.  Also, we measure three types of correlations namely Pearson correlation, Kendall rank correlation and Spearman correlation [@stats2018].
 
 Pearson r correlation: Pearson r correlation is widely used in statistics to measure the degree of the relationship between linear related variables. 
 Kendall rank correlation: Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.
@@ -159,7 +157,7 @@ The main factor as evident from the Correlation analysis is Knowledge and techno
 
 # Future Works
 Future research suggestions can be summarised as the following aspects:
-i)	Finding suitable metrics that capture innovation for developing countries like Africa [@7] as innovation process is difficult partly due to uncertain domestic competencies.
+i)	Finding suitable metrics that capture innovation for developing countries like Africa as innovation process is difficult partly due to uncertain domestic competencies.
 ii)	Analysis from the Global Innovation Index can be done at a regional level instead of a specific country so as to achieve a comprehensive overview on the economy.
 
 # Acknowledgements
@@ -169,7 +167,7 @@ We would like to show our gratitude to Professor Kam Tin Seong who provided insi
 
 ---
 references:
-- id: 1
+- id: olso2021
   title: Oslo Manual
   author: 
   - family: Organisation for Economic Cooperation and Development ilibrary
@@ -177,7 +175,8 @@ references:
   publisher: Organisation for Economic Cooperation and Development (OECD)
   issued:
     year: 2021
-- id: 2
+    
+- id: cornell2020
   title: Global Innovation Index 2020
   author: 
   - family: Cornell INSEAD WIPO
@@ -185,43 +184,38 @@ references:
   publisher: Cornell INSEAD WIPO
   issued:
     year: 2020
-- id: 3
+
+- id: vincent2020
   title: Convert Country Names and Country Codes
   author: 
   - family: Vincent Arel-Bundock, CJ Yetman and Nils Enevoldsen
   type: article-journal
   issued:
     year: 2020
-- id: 4
-  title: Global Innovation Index 2020
+
+- id: tskam2019
+  title: Heatmap Visualization with R
   author: 
-  - family: Cornell INSEAD WIPO
+  - family: Dr Kam Tin Seong
   type: article-journal
-  publisher: Cornell INSEAD WIPO
   issued:
-    year: 2020
-- id: 5
-  title: C
+    year: 2019
+
+- id: gganimate2018
+  title: Animated bubble chart with R and gganimate
   author: 
-  - family: Organisation for Economic Cooperation and Development ilibrary
+  - family: R graph gallery
   type: article-journal
-  publisher: Organisation for Economic Cooperation and Development (OECD)
   issued:
-    year: 2021
-- id: 6
-  title: Global Innovation Index 2020
+    year: 2018
+
+- id: stats2018
+  title: Advancement Through Clarity
   author: 
-  - family: Cornell INSEAD WIPO
+  - family: Statistics Solutions
   type: article-journal
-  publisher: Cornell INSEAD WIPO
   issued:
-    year: 2020
-- id: 7
-  title: Global Innovation Index 2020
-  author: 
-  - family: Cornell INSEAD WIPO
-  type: article-journal
-  publisher: Cornell INSEAD WIPO
-  issued:
-    year: 2020
+    year: 2018
+    
+
 ...

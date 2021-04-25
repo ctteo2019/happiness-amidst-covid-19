@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["application-user-guide_files/anchor-4.2.2/anchor.min.js","application-user-guide_files/bowser-1.9.3/bowser.min.js","application-user-guide_files/distill-2.2.21/template.v2.js","application-user-guide_files/jquery-1.11.3/jquery.min.js","application-user-guide_files/webcomponents-2.0.0/webcomponents.js","images/bubble.png","images/choropleth.png","images/correlation.png","images/hclust.png","images/homepage.png","images/layout.png","images/radar.png","images/slope.png","images/stats.png"]}
+  {"type":"character","attributes":{},"value":["application-user-guide.tex","generate_pdf.RMD","generate_pdf.tex","images/bubble.png","images/choropleth.png","images/correlation.png","images/hclust.png","images/homepage.png","images/layout.png","images/radar.png","images/slope.png","images/stats.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -309,6 +309,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: underline;
   }
   
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
   d-article pre,
@@ -463,6 +468,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
   }
   
   
@@ -1130,7 +1146,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('div.sourceCode, pre, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1245,6 +1261,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -1406,6 +1436,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <!--/radix_placeholder_distill-->
   <script src="application-user-guide_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="application-user-guide_files/popper-2.6.0/popper.min.js"></script>
+  <link href="application-user-guide_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="application-user-guide_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="application-user-guide_files/tippy-6.2.7/tippy.umd.min.js"></script>
   <script src="application-user-guide_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="application-user-guide_files/bowser-1.9.3/bowser.min.js"></script>
   <script src="application-user-guide_files/webcomponents-2.0.0/webcomponents.js"></script>
@@ -1481,7 +1515,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Side Panel</li>
 <li>Main Panel</li>
 </ol>
-<p><img src="images/layout.png" /></p>
+<p><img src="./images/layout.png" /></p>
 <h3 id="top-navigation-bar">Top Navigation Bar</h3>
 <p>The top navigation bar has 2 main sections with drop-down selections:</p>
 <ol type="1">
@@ -1508,31 +1542,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <p>The <strong>Exploratory Data Analysis</strong> module provides users with various tools to comb through the data and to obtain insights.</p>
 <h3 id="choropleth-map">Choropleth Map</h3>
-<p><img src="images/choropleth.png" /> The choropleth map provides a board overview and the spread of different indicators across the geospatial dimension. User can select the <strong>Year</strong> and <strong>Indicator</strong> on the side panel to display on the world map.</p>
+<p><img src="./images/choropleth.png" /> The choropleth map provides a board overview and the spread of different indicators across the geospatial dimension. User can select the <strong>Year</strong> and <strong>Indicator</strong> on the side panel to display on the world map.</p>
 <p>The map is also interactive, hence, you will be able to zoom into the country that you are looking for.</p>
 <h3 id="radar-chart">Radar Chart</h3>
-<p><img src="images/radar.png" /></p>
+<p><img src="./images/radar.png" /></p>
 <p>The radar chart provides a comparison between different selected countries based on the selected set of indicators. User can select from the side panel the <strong>Year</strong> of the data, the set of <strong>Indicators</strong> to compare, and the different <strong>Countries</strong> to compare among each other.</p>
 <p>An overlay will be added for each country.</p>
 <h3 id="slope-graph">Slope Graph</h3>
-<p><img src="images/slope.png" /></p>
+<p><img src="./images/slope.png" /></p>
 <p>The slope graph provides a time-series analysis and comparison of the selected indicator for select set of countries.</p>
 <p>Users can select a range of <strong>Year</strong>, the <strong>Indicator</strong> to trend, and the set of <strong>Countries</strong> to compare among each other via the side panel.</p>
 <h3 id="bubble-plot">Bubble Plot</h3>
-<p><img src="images/bubble.png" /> <em>Note: the bubble plot is animated and therefore, the initial plot and subsequent plot (via Submit button) takes around 20 seconds to load</em></p>
+<p><img src="./images/bubble.png" /> <em>Note: the bubble plot is animated and therefore, the initial plot and subsequent plot (via Submit button) takes around 20 seconds to load</em></p>
 <p>The bubble plot provides the relationship between the 3 selected indicators for each of the country. An animation is also added to look at the changes for the 3 selected indicators across the years (from 2015 to 2020).</p>
 <p>Users can choose an indicator for the 3 different parameters: <strong>X-Axis</strong>, <strong>Y-Axis</strong>, and <strong>Size</strong> of the bubble, and also choose the set of <strong>Countries</strong> to compare among each other.</p>
 <h2 id="statistical-analysis">Statistical Analysis</h2>
 <p>The <strong>Statistical Analysis</strong> module provides users with various statistical techniques to deep dive into the dataset and uncovering hidden patterns and trends.</p>
 <h3 id="correlation-analysis">Correlation Analysis</h3>
-<p><img src="images/correlation.png" /> The correlation plot provides users a measurement of the strength of association between the selected set of indicators.</p>
+<p><img src="./images/correlation.png" /> The correlation plot provides users a measurement of the strength of association between the selected set of indicators.</p>
 <p>Users are able to select the <strong>Year</strong>, the set of <strong>Indicators</strong> to correlate, filter the <strong>Countries</strong>, change the <strong>Correlation Method</strong>, the way NA is handles via <strong>NA Actions</strong>, the <strong>Plot Method</strong> and how the correlation is orders via <strong>Reorder Correlation</strong>.</p>
 <h3 id="statistical-plots">Statistical Plots</h3>
-<p><img src="images/stats.png" /></p>
+<p><img src="./images/stats.png" /></p>
 <p>The statistical plots provides users with relevant statistical details via a combination of a scatter plot, box plot, and a violin plot. The plot is also <em>publication-ready</em> courtesy of the <em>ggstatsplot</em> library.</p>
 <p>Users are able to select the different <strong>Years</strong> and the <strong>Indicator</strong> to compare among the different regions.</p>
 <h3 id="hierarchical-clustering">Hierarchical Clustering</h3>
-<p><img src="images/hclust.png" /> Hierarchical Clustering allows users to cluster similar countries together via the selected indicator in the selected year.</p>
+<p><img src="./images/hclust.png" /> Hierarchical Clustering allows users to cluster similar countries together via the selected indicator in the selected year.</p>
 <p>Users are able to select the <strong>Year</strong> of interest, the set of <strong>Indicators</strong> for clustering, the <strong>Distance Method</strong> used, the <strong>Hierarchical Clustering Method</strong>, the number of <strong>Clusters</strong> for the countries and indicators.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
