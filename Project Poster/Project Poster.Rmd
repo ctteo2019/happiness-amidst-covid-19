@@ -1,80 +1,128 @@
 ---
-title: 'INNOVAC - Innovation Amidst Covid-19'
+title: |
+  | INNOVAC - Innovation Amidst Covid-19
+  | Web-based Visualisation in R using Shiny
 author:
   - name: Lance Teo Chye Teck
-    affil: 1
+    affil: "SMU"
   - name: Elaine Lee
-    affil: 2
-affiliation:
-  - num: 1
-    address: Singapore Management university
-  - num: 2
-    address: Singapore Management university
-column_numbers: 3
-logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
-logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+    affil: "SMU"
+
+column_numbers: 5
+logoright_name: https&#58;//raw.githubusercontent.com/ctteo2019/innovation-amidst-covid-19/b2b32ec3a38be68271295e0e0038a789210b327d/images/poster_logo.png
+logoleft_name: https&#58;//raw.githubusercontent.com/ctteo2019/innovation-amidst-covid-19/b2b32ec3a38be68271295e0e0038a789210b327d/images/poster_logo.png
+
+primary_colour: "#050233"
+secondary_colour: "#e7fc03"
+accent_colour: "#022433"
+
+
 output: 
   posterdown::posterdown_html:
     self_contained: false
+    poster_height: "841mm"
+    poster_width: "594mm"
+
 bibliography: packages.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
 ```
+
+```{r echo=FALSE, eval=FALSE}
+
+library(pagedown)
+pagedown::chrome_print("Project-Poster.html")
+
+```
+
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@R-rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+An innovation is a new or improved product or process (or combination thereof) that differs significantly from the unit’s previous products or processes and that has been made available to potential users (product) or brought into use by the unit (process).  Innovation Index is an appropriate measurement to gauge innovation capabilities. Innovation, being the most known ranking for measuring innovation performance is used as a leading reference in several international reports, for instance, the World Economic Forum’s Global Competitiveness Report which looks at economies’ innovation capability and ultimately, the Global Innovation Index which is co-published by the World Intellectual Property Organization, Cornell University and INSEAD.
 
-## Objectives
+The purpose of this paper is to analyse and identify patterns regarding the **GII during Covid-19 pandemic**. We intend to draw conclusions from the data and generate visualization of the data for the respective countries.
 
-1. Easy to use reproducible poster design. 
-2. Integration with R Markdown.
-3. Easy transition from `posterdown` to `pagedown` report or manuscript documents [@R-pagedown].
 
-# Methods
+# Approach
 
-This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@R-posterdown].
+The main parts of quantitative analysis will include **Exploratory Data Analysis**, **Clustering**, **Statistical Plot** and **Correlation**.
+Exploratory Data Analysis refers to the necessary process of performing initial investigations on the dataset to discover patterns and to gain more insights into the dataset and as part of pre-processing for further analysis.
+Clustering is described as the unsupervised classification of patterns into groups, called clusters. One of the approaches is called **Hierarchical Clustering**. 
+
+Statistical Plot allows the visualization of the actual data in combination with a selection of summaries such as box plot or violin plot.
+Lastly, it is important to look into correlations between chosen variables. The chart will show correlation coefficients between the GII score, innovation inputs and outputs.
+
+\
+
+# Exploratory Data Analysis
+
+### Choropleth Map
+Choropleth Map is a thematic map in which areas are shaded in proportion to the GII score.  In the case of GII score, 6 bins were created, and sequential colour scheme (from light to dark blue) is used. Darker blue colour represents higher GII scores. 
+
+![](./images/choro_crop.png){width="90%"}
+
+### Radar Chart
+Radar Chart displays multivariate data in a 2-dimensional chart where each variable starts at the same point.  In order to distinguish each observation from each other, only 10 countries (rank the top 10 of the GII Scores) were selected for further analysis.
+
+![](./images/radar_crop.png){width="90%"}
+\
+\
+\
+\
+\
+\
+\
+\
+
+### Slope Graph
+In order to show the changes of GII score for all countries for year 2015 to 2020, Slope Graph is used. The chart will demonstrate if there is a growing or declining trend across time period.
+
+![](./images/slope_crop.png){width="90%"}
+
+### Bubble Plot
+It is important to visualize how input or output sub-index relate to one another. The use of Bubble Plot is an effective way to show the relationship between two variables. The advantage of a Bubble Plot allows the visualization of a third variable which is the size of the circle to reflect the GII score.
+
+![](./images/bubble_crop.png)
+
+# Statistical Analysis
+
+### Correlation Analysis
+
+In our paper, we consider seven metric variables (Input and Output sub-indexes including Institution, Human Capital and Research, Infrastructure, Market Sophistication, Business Sophistication, Knowledge and Technology outputs and Creative outputs). Most of the correlation coefficient values appear positive. It provides users a measurement of the strength of association between the selected set of indicators.
+
+![](./images/corr_crop.png)
+
+### Statistical Plots
+
+The statistical plots provide users with relevant statistical details via a combination of a scatter plot, box plot, and a violin plot.The plot is also publication-ready courtesy of the ggstatsplot library.
+
+![](./images/stats_crop.png){width="90%"}
+
+### Hierarchical Clustering
+
+For visualizing multivariate data, heatmap is plotted with corresponding relationship and is also able to cluster similar countries and indicators together based on their relationships.
+
+![](./images/hclust_crop.png){width="90%"}
+\
+\
+\
+\
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
+* Most countries' innovation index reduced during the Covid-19 period in the year 2020 as seen from the Slope Graph. However, in terms of improvement, it can be seen that **China**'s innovation index has been increasing over the past few years.
+* The main factor that is affecting the Global Innovation Index is **Knowledge and Technology Outputs**, which is probably rather obvious.
+* It can also be concluded that the reason why China has increasing Global Innovation Index is because of increasing Knowledge and Technology Outputs.
 
-You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
+![](./images/slope_result.png){width="90%"}
 
-```{r mytable, out.width='80%'}
-knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
-```
+* From the statistical plot shown earlier, it can also be concluded that **Europe** region generally has a higher Global Innovation Index as compared to the rest of the world. It is also interesting to see that **Americas** region and **Africa** region have similar average Global Innovation Index.
 
-Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+# Future Works
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=5}
-plot(mtcars[1:2])
-```
+* Finding suitable metrics that capture innovation for developing countries like Africa as innovation process is difficult partly due to uncertain domestic competencies.
+* Analysis from the Global Innovation Index can be done at a regional level instead of a specific country or economic so as to achieve a complete overview on the economy.
 
-```{r morefigs, out.width='80%', echo=TRUE, fig.cap='Amazing, right?!', fig.height=5}
-data <- iris
-
-plot(x = data$Sepal.Length, 
-     y = data$Sepal.Width, 
-     col = data$Species,
-     pch = 19, 
-     xlab = "Sepal Length (cm)",
-     ylab = "Sepal Width (cm)")
-
-```
-
-# Next Steps
-
-Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@R-posterdown].
-
-# Conclusion
-
-Try `posterdown` out! Hopefully you like it!
-
-```{r, include=FALSE}
-knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
-```
-
-# References
